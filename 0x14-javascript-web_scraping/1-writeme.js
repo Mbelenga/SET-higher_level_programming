@@ -1,17 +1,12 @@
 #!/usr/bin/node
 
-// import the node
 const fs = require('fs');
 
-// The first argument is the file path
-const file = process.argv[2];
-
-// The string to write
+const filePath = process.argv[2];
 const content = process.argv[3];
 
-// write to file
-fs.writeFile(file, content, 'utf-8', error => {
-  if (error) {
-    console.log(error);
+fs.writeFile(filePath, content, 'utf8', (err) => {
+  if (err) {
+    console.log(err);
   }
 });
